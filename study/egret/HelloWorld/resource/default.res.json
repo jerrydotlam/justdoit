@@ -1,0 +1,80 @@
+{
+	"groups": [
+		{
+			"keys": "bg_jpg,egret_icon_png,description_json,bg_canvas_png,bg_gameover_png,bg_hole_png,hammer_png,help_png,icon_png,mouse_png,next_png,set_board_png,star_png,time_roller_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "bg_jpg",
+			"type": "image",
+			"url": "assets/bg.jpg"
+		},
+		{
+			"name": "egret_icon_png",
+			"type": "image",
+			"url": "assets/egret_icon.png"
+		},
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "bg_canvas_png",
+			"type": "image",
+			"url": "assets/bg_canvas.png"
+		},
+		{
+			"name": "bg_gameover_png",
+			"type": "image",
+			"url": "assets/bg_gameover.png"
+		},
+		{
+			"name": "bg_hole_png",
+			"type": "image",
+			"url": "assets/bg_hole.png"
+		},
+		{
+			"name": "hammer_png",
+			"type": "image",
+			"url": "assets/hammer.png"
+		},
+		{
+			"name": "help_png",
+			"type": "image",
+			"url": "assets/help.png"
+		},
+		{
+			"name": "icon_png",
+			"type": "image",
+			"url": "assets/icon.png"
+		},
+		{
+			"name": "mouse_png",
+			"type": "image",
+			"url": "assets/mouse.png"
+		},
+		{
+			"name": "next_png",
+			"type": "image",
+			"url": "assets/next.png"
+		},
+		{
+			"name": "set_board_png",
+			"type": "image",
+			"url": "assets/set_board.png"
+		},
+		{
+			"name": "star_png",
+			"type": "image",
+			"url": "assets/star.png"
+		},
+		{
+			"name": "time_roller_png",
+			"type": "image",
+			"url": "assets/time_roller.png"
+		}
+	]
+}
