@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name=format-detection content="telephone=no">
+    <style type="text/css">
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+    .device-info {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .box {
+    }
+    header, footer, main {
+        display: block;
+    }
+
+    header {
+        position: fixed;
+        height: 50px;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: #f00;
+    }
+
+    footer {
+        position: fixed;
+        height: 34px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #0f0;
+    }
+
+    main {
+        margin-top: 50px;
+        margin-bottom: 34px;
+        height: 2000px
+    }
+    </style>
+</head>
+<body class="layout-fixed">
+     <!-- fixed定位的头部 -->
+    <header>
+        
+    </header>
+    
+    <!-- 可以滚动的区域 -->
+    <main>
+        <!-- 内容在这里... -->
+        <div class="device-info" id="di"></div>
+    </main>
+    
+    <!-- fixed定位的底部 -->
+    <footer>
+        <input type="text" placeholder="Footer..."/>
+        <button class="submit">提交</button>
+    </footer>
+
+    <!-- 打印WebView信息 -->
+    <script type="text/javascript">
+    var n = document.getElementById('di');
+    n.innerHTML = navigator.userAgent;
+    </script>
+</body>
+</html>

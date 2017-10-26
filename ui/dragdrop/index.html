@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dragdrop</title>
+    <style type="text/css">
+    .dd-list {
+        list-style: none;
+        width: 500px;
+    }
+    .dd-item {
+        float: left;
+        margin: 0 20px 20px 0;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        border: 1px solid #cccccc;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="g-doc">
+        <ul class="dd-list">
+            <li class="dd-item" draggable="true">1</li>
+            <li class="dd-item" draggable="true">2</li>
+            <li class="dd-item" draggable="true">3</li>
+            <li class="dd-item" draggable="true">4</li>
+            <li class="dd-item" draggable="true">5</li>
+            <li class="dd-item" draggable="true">6</li>
+            <li class="dd-item" draggable="true">7</li>
+            <li class="dd-item" draggable="true">8</li>
+            <li class="dd-item" draggable="true">9</li>
+        </ul>
+    </div>
+    <script>
+    (function (win) {
+        var $nodes = document.querySelectorAll('.dd-item');
+        var i = 0, l = $nodes.length, $dragNode = null;
+        for (; i < l; ++i) {
+            $nodes[i].addEventListener('dragstart', dragstart);
+            $nodes[i].addEventListener('dragenter', dragenter);
+            $nodes[i].addEventListener('dragover', dragover);
+            $nodes[i].addEventListener('dragleave', dragleave);
+            $nodes[i].addEventListener('drop', drop);
+            $nodes[i].addEventListener('dragend', dragend);
+        }
+
+        function dragstart(e) {
+            console.log('dragstart');
+            var $target = e.target;
+            $target.style.opacity = '0.4';
+            $dragNode = $target;
+        }
+        function dragenter(e) {
+            console.log('dragenter');
+        }
+        function dragover(e) {
+            console.log('dragover');
+            e.preventDefault();
+            e.dataTransfer.dropEffect =  'move';
+        }
+        function dragleave(e) {
+            console.log('dragleave');
+        }
+        function drop(e) {
+            console.log('drop');
+            var $target = e.target;
+            $target.parentNode.insertBefore($dragNode, $target);
+        }
+        function dragend(e) {
+            console.log('dragend');
+            e.preventDefault();
+            $dragNode.style.opacity = '1';
+            $dragNode = null;
+        }
+    })(this)
+    </script>
+</body>
+</html>
