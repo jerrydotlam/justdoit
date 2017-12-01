@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ie placeholder bug</title>
+</head>
+<body>
+    <div id="a"><textarea id="mytext" placeholder="foo"></textarea></div>
+    <div id="b"></div>
+    <br/>
+    <input id="trigger" type="button" value="Click me to see the bug in IE10 and IE11" />
+    <script>
+    document.getElementById("trigger").onclick=function() {
+        alert('outerHTML (textarea should not have value):\n(fails in IE10 & IE11)\n\n' + document.getElementById("mytext").outerHTML);
+        alert('innerHTML (should be empty):\n(fails in IE10 only)\n\n' + document.getElementById("mytext").innerHTML);
+        alert('innerText (should be empty):\n(fails in IE10 & IE11)\n\n' + document.getElementById("mytext").innerText);
+
+        var a = document.getElementById('a');
+        var b = document.getElementById('b');
+        b.innerHTML = a.innerHTML;
+    };
+    </script>
+</body>
+</html>
+
